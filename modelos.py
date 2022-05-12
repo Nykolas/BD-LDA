@@ -30,7 +30,7 @@ def entrenar(diccionario,corpus,n_topicos,n_art_entrenamiento):
 	#        En este caso, fijamos el valor en auto.
 	lda = gensim.models.LdaModel(corpus=corpus, id2word=diccionario, 
 				   num_topics=n_topicos, random_state=42, 
-				   chunksize=n_art_entrenamiento, passes=10, alpha='auto')
+				   chunksize=n_art_entrenamiento, passes=8, alpha='auto')
 	return lda
 
 

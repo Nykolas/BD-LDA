@@ -31,8 +31,12 @@ def unir(datos1,datos2):
 
 def guardar_df(datos,name):
 	path = f'datos/{name}'
-	datos.to_excel(path,sheet_name="datos")
+	datos.to_excel(path,sheet_name="datos",index=False)
 
+def unir_y_guardar(df1,df2):
+	salida = pd.merge(df1,df2, on = 'id')
+	salida.head()
+	guardar_df(salida,'salida.xlsx')
 
 
 '''
